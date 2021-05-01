@@ -12,10 +12,8 @@ public class UsingJavaArraysBinarySearch {
         int idx = Arrays.binarySearch(arrays, key);
         if (idx < 0) {
             System.out.println("have no index, key[" + key + "]");
-            System.out.println("insert point is : [" + idx + "]");
-        }
-        else {
-            System.out.println("index : [" + idx + "]");
+        } else {
+            System.out.println("search index : [" + idx + "]");
         }
     }
 }
