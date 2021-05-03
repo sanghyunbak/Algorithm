@@ -1,7 +1,7 @@
 package com.shbak.study.stack;
 
-import org.apache.commons.lang.ArrayUtils;
-import org.apache.commons.lang.StringUtils;
+//import org.apache.commons.lang.ArrayUtils;
+//import org.apache.commons.lang.StringUtils;
 
 /**
  * LIFO (Last In First Out)
@@ -52,19 +52,19 @@ public class IntStack {
         values[ptr++] = value;
     }
 
-    public class NoDataToPopException extends RuntimeException {
-        NoDataToPopException() {
+    public class NoDataException extends RuntimeException {
+        NoDataException() {
 
         }
 
-        NoDataToPopException(String msg) {
+        NoDataException(String msg) {
             super(msg);
         }
     }
 
     public void pop() {
         if (ptr == 0) {
-            throw new NoDataToPopException();
+            throw new NoDataException();
         }
 
         ptr--;
@@ -83,6 +83,30 @@ public class IntStack {
         return sb.toString();
     }
 
+    public int peek() {
+        if (ptr <= 0) {
+            /**
+             * throws is unexpected token: token is syntax
+             */
+            throw new NoDataException("no data during call peek() method");
+        }
+        return values[ptr - 1];
+    }
+
+    public class IndexNotFoundException extends RuntimeException {
+
+    }
+
+    public int indexOf (int value) {
+        for (int i = ptr - 1; i >= 0 ; i--) {
+            if (values[i] == value) {
+                return i;
+            }
+        }
+
+        throw new IndexNotFoundException();
+    }
+
     public static void main(String[] args) {
         int MAX_NUM = 10;
         /**
@@ -90,6 +114,7 @@ public class IntStack {
          * why? :
          * I use subclass and call in super class's static method main
          */
+
         IntStack intStack = new IntStack(MAX_NUM);
         intStack.push(4);
         intStack.push(5);
@@ -98,5 +123,9 @@ public class IntStack {
         intStack.pop();
         intStack.pop();
         System.out.println("two pop result : " + intStack);
+        System.out.println("peek() : " + intStack.peek());
+        System.out.println("indexOf(4) : " + intStack.indexOf(4));
+        System.out.println("indexOf(7) : " + intStack.indexOf(7));
+
     }
 }
