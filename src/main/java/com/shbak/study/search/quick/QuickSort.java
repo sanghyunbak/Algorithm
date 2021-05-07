@@ -26,7 +26,11 @@ public class QuickSort {
         while(pl < pr) {
             while(pivot > array[pl] && pl <= end) pl++;
             while(pivot < array[pr] && pr >= start) pr--;
-            if(pl <= pr) swap(array, pl++, pr--); // important
+            System.out.println("========== if start =========");
+            System.out.println("pl : " + pl);
+            System.out.println("pr : " + pr);
+            System.out.println("========== if end =========");
+            if(pl < pr) swap(array, pl++, pr--); // important
         }
 
         if(start < pr) quickSort(array, start, pr);
