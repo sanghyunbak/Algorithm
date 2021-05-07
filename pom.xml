@@ -16,8 +16,22 @@
     </dependencies>
 
     <properties>
-        <maven.compiler.source>15</maven.compiler.source>
-        <maven.compiler.target>15</maven.compiler.target>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
+<!--    <build>-->
+<!--        <plugins>-->
 
+<!--            <plugin>-->
+<!--            <groupId>org.apache.maven.plugins</groupId>-->
+<!--            <artifactId>maven-compiler-plugin</artifactId>-->
+<!--&lt;!&ndash;            <version>3.7.0</version>&ndash;&gt;-->
+<!--            <configuration>-->
+<!--                <source>1.8</source>-->
+<!--                <target>1.8</target>-->
+<!--                <verbose>true</verbose>-->
+<!--            </configuration>-->
+<!--        </plugin>-->
+<!--        </plugins>-->
+<!--    </build>-->
 </project>
