@@ -1,6 +1,6 @@
 package com.shbak.study.sort.merge;
 
-import com.shbak.study.util.StringUtil;
+import com.shbak.study.util.ArrayUtil;
 
 public class DailyPractice {
     public static void mergeSort(int[] array, int start_index, int end_index) {
@@ -38,9 +38,9 @@ public class DailyPractice {
         System.out.println("mid_index : " + mid_index);
         System.out.println("end_index : " + end_index);
         System.out.println("Array");
-        StringUtil.printIntArray(array);
+        ArrayUtil.printIntArray(array);
         System.out.println("TMP");
-        StringUtil.printIntArray(tmp);
+        ArrayUtil.printIntArray(tmp);
         System.out.println("=====================================================");
 
         while(pl <= mid_index && pr <= end_index) {
@@ -60,8 +60,8 @@ public class DailyPractice {
 
     public static void main(String[] args) {
         int[] initail_array = {1, 5, 7, 10, 6, 3, 2, 19};
-        StringUtil.printIntArray(initail_array);
+        ArrayUtil.printIntArray(initail_array);
         mergeSort(initail_array, 0, initail_array.length - 1);
-        StringUtil.printIntArray(initail_array);
+        ArrayUtil.printIntArray(initail_array);
     }
 }

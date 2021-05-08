@@ -1,6 +1,6 @@
 package com.shbak.study.sort.quick;
 
-import com.shbak.study.util.StringUtil;
+import com.shbak.study.util.ArrayUtil;
 
 public class DailyQuickSort {
     public static void swap (int[] array, int index_1, int index_2) {
@@ -17,7 +17,7 @@ public class DailyQuickSort {
         System.out.println("start_index : " + start);
         System.out.println("end_index : " + end );
         System.out.println("pivot : " + pivot);
-        StringUtil.printIntArray(array);
+        ArrayUtil.printIntArray(array);
         System.out.println("=================================================");
         while(pl <= pr) { // equal comparison is important!!, if not `
             while(array[pl] < pivot) pl++;
@@ -35,6 +35,6 @@ public class DailyQuickSort {
     public static void main(String[] args) {
         int[] initial_array = {3, 1, 6, 10, 5, 7, 2, 19};
         quickSort(initial_array, 0, initial_array.length - 1);
-        StringUtil.printIntArray(initial_array);
+        ArrayUtil.printIntArray(initial_array);
     }
 }
