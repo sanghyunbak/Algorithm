@@ -23,14 +23,14 @@ public class QuickSort {
         printAll(array);
         System.out.println("=====================================================");
 
-        while(pl < pr) {
+        while(pl <= pr) {
             while(pivot > array[pl] && pl <= end) pl++;
             while(pivot < array[pr] && pr >= start) pr--;
             System.out.println("========== if start =========");
             System.out.println("pl : " + pl);
             System.out.println("pr : " + pr);
             System.out.println("========== if end =========");
-            if(pl < pr) swap(array, pl++, pr--); // important
+            if(pl <= pr) swap(array, pl++, pr--); // important if have no equal below code during pr and pl is overwrapped and cause infinite loop
         }
 
         if(start < pr) quickSort(array, start, pr);
